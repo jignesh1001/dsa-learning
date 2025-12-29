@@ -18,4 +18,28 @@ class MaxSubarraySumK{
          System.out.println(maxSum);
         return maxSum;
     }
+    // counter question can be asked 
+    // to find subarray that gives maximum sum
+    public static int kedane(int[] arr){
+        int maxSum = Integer.MIN_VALUE;
+        int sum = 0;
+        int start = 0, ansStart=-1,ansEnd=-1;
+    
+        for(int i = 0; i < arr.length;i++){
+           if(sum == 0) start = i;
+           sum += arr[i];
+           if(sum > maxSum){
+              maxSum = sum;
+              ansStart = start;
+              ansEnd = i;
+           }
+           if(sum < 0){
+            sum = 0;
+           }
+        }
+        int[] ans = Arrays.copyOfRange(arr,ansStart,ansEnd+1);
+        System.out.print(Arrays.toString(ans));
+        System.out.println(maxSum);
+        return maxSum;
+    }
 }
