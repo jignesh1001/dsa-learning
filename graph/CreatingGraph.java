@@ -5,7 +5,7 @@ class CreatingGraph {
     static class Edge{
         int src;
         int dest;
-        int wt;
+        int wt; 
         
         public Edge(int s,int d,int w){
             this.src = s;
@@ -15,6 +15,7 @@ class CreatingGraph {
     }
     public static void main(String[] args) {
         int V = 5;
+        //array of ArrayList<Edge>
         ArrayList<Edge>[] graph = new ArrayList[V];
         for(int i = 0; i < V;i++){
             graph[i] = new ArrayList<>();
@@ -36,8 +37,7 @@ class CreatingGraph {
         graph[3].add(new Edge(3,2,1));
         // 4 vertex
         graph[4].add(new Edge(4,2,2));
-        
-        
+    
         // 2's neighbors
         for(int i = 0; i < graph[2].size();i++){
             Edge e = graph[2].get(i);
